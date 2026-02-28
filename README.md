@@ -1,53 +1,39 @@
-# TestArreglo
+# Reto: Validador de Expresiones con Pilas (Nodos) 🚀
 
-# 🏆 Desafío de Algoritmos: Búsqueda del Valor Máximo
+Este proyecto consiste en implementar una **Pila dinámica basada en Nodos** para resolver un problema clásico de ciencias de la computación: el balanceo de signos de agrupación en expresiones matemáticas.
 
-Bienvenido al laboratorio de **Programación III**. Este ejercicio está diseñado para evaluar tu capacidad de implementar lógica eficiente en **C# (.NET 10)** utilizando arreglos unidimensionales.
+## 🎯 Objetivo
+Desarrollar una solución eficiente que determine si una expresión matemática está correctamente balanceada en sus signos de agrupación: `()`, `[]` y `{}`.
 
----
+## 📋 Instrucciones de Desarrollo
 
-### 📋 Instrucciones del Ejercicio
-Tu objetivo es completar la lógica del programa para que, dado un arreglo de enteros, identifique y muestre el **valor máximo**.
+1.  **Clase `Pila.cs`**:
+    * **`Insertar(char x)`**: Implementar la lógica de *Push* utilizando nodos.
+    * **`Extraer()`**: Implementar la lógica de *Pop*. Debe retornar el carácter superior y mover el puntero.
+    * **`ValidarMatematica(string expresion)`**: 
+        * Recorrer la cadena una sola vez (O(n)).
+        * Ignorar números, letras y operadores.
+        * Utilizar la estructura de Pila para validar la jerarquía y el cierre de signos.
 
-1.  **Entrada:** * El programa recibe un entero `n` (tamaño del arreglo).
-    * Luego recibe `n` números enteros separados por espacios.
-2.  **Salida:** * El programa debe imprimir **únicamente** el número mayor encontrado.
-3.  **Restricción:** * No modifiques la sección de lectura de datos. Si alteras el `Console.ReadLine()`, los **Tests Automáticos** fallarán.
+2.  **Restricciones Técnicas**:
+    * **Prohibido** el uso de `System.Collections.Generic.Stack`.
+    * **Prohibido** el uso de métodos de limpieza de strings como `Replace()`.
+    * La gestión de memoria debe ser manual mediante la clase interna `Nodo`.
 
----
+## ⚙️ Evaluación y Ranking
 
-### 🚀 Métrica de Evaluación y Ránking
-Este repositorio utiliza **GitHub Classroom Autograding**. Tu posición en la tabla de líderes (Leaderboard) dependerá de los siguientes criterios:
+Al realizar un `git push`, GitHub evaluará automáticamente tu código con diferentes casos de prueba.
 
-| Métrica | Indicador | Objetivo |
-| :--- | :--- | :--- |
-| **Puntaje** | Test Cases | Obtener **100/100** pasando todos los casos de prueba. |
-| **Eficiencia** | Tiempo (ms) | Lograr el menor tiempo de ejecución total. |
-| **Recursos** | Memoria (MB) | Mantener un uso de memoria optimizado. |
+* **Puntuación**: Se basa en la exactitud de los resultados.
+* **Ranking de Eficiencia**: Los mejores puestos en el Dashboard de la clase se asignarán a quienes logren el **menor tiempo de ejecución** y el **menor consumo de RAM**. ¡Optimiza tu uso de memoria!
 
----
+## 💻 Ejecución Local
 
-### 🛠️ Flujo de Trabajo (Workflow)
-
-Para que tu entrega sea válida y aparezca en el ránking, sigue estos pasos:
-
-* **Paso 1:** Clona este repositorio en tu equipo.
-* **Paso 2:** Localiza el archivo `Program.cs`.
-* **Paso 3:** Escribe tu lógica dentro del bloque marcado como `// --- INICIO DE LÓGICA DEL ALUMNO ---`.
-* **Paso 4:** Prueba tu código localmente con `dotnet run`.
-* **Paso 5:** Sube tus cambios:
-    ```bash
-    git add .
-    git commit -m "Implementación de búsqueda de máximo"
-    git push
-    ```
+Para probar tu programa en tu máquina:
+1. Asegúrate de tener instalado el SDK de **.NET 10**.
+2. Ejecuta el comando: `dotnet run`
+3. Ingresa una expresión, por ejemplo: {(3+2)*[5-1]}
+4. La salida debe ser: `true`
 
 ---
-
-### 📊 Seguimiento de Resultados
-Una vez realizado el `push`, dirígete a la pestaña **Actions** de este repositorio en GitHub. 
-* Si ves un check verde ✅: Has pasado las pruebas y estás en el ránking.
-* Si ves una X roja ❌: Revisa los logs de error para corregir tu código.
-
-> [!TIP]
-> **¿Quieres el primer lugar?** No solo busques que funcione; busca que el algoritmo recorra el arreglo la menor cantidad de veces posible. ¡Cada milisegundo cuenta!
+**Nota:** No modifiques el archivo `Program.cs`.
