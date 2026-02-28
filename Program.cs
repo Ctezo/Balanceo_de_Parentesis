@@ -1,27 +1,27 @@
 using System;
 
-// 1. Lectura de datos: Configurada para los Test Cases de GitHub
-string? linea1 = Console.ReadLine();
-if (string.IsNullOrEmpty(linea1)) return;
+/* ADVERTENCIA: 
+   Este archivo es utilizado por el Autograding de GitHub para calificar.
+   No modifiques la lectura de datos ni la salida de consola, 
+   de lo contrario tu nota podría ser 0.
+*/
 
-int n = int.Parse(linea1);
-// Leemos la segunda línea y dividimos por espacios, eliminando vacíos
-string[] entrada = Console.ReadLine()?.Split(' ', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
+// 1. Lectura de la expresión matemática
+string? entrada = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(entrada)) return;
 
-int[] numeros = new int[n];
-for (int i = 0; i < n; i++)
-{
-    numeros[i] = int.Parse(entrada[i]);
-}
+// 2. Instancia de la clase del alumno
+Pila sol = new Pila();
 
-// --- INICIO DE LÓGICA DEL ALUMNO ---
-// Instrucción: El alumno debe encontrar el valor máximo del arreglo 'numeros'
-int maximo = numeros[0]; 
+// 3. Ejecución de la lógica de validación
+//Ejemplo entrada = ((a+b)*[c-d])
+bool esValida = sol.ValidarMatematica(entrada);
 
-// TODO: Implementar el algoritmo de búsqueda aquí
+// 4. Salida para Autograding: 
+// GitHub comparará esta línea con el resultado esperado (true/false)
+Console.WriteLine(esValida.ToString().ToLower());
 
-
-// --- FIN DE LÓGICA DEL ALUMNO ---
-
-// 2. Salida: Lo que el Autograding comparará
-Console.WriteLine(maximo);
+/* NOTA DE RENDIMIENTO:
+   El tiempo de ejecución y la memoria RAM consumida serán enviados 
+   automáticamente al ranking de la clase. ¡Optimiza tu código!
+*/
